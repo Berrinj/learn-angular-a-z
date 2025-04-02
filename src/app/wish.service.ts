@@ -42,7 +42,7 @@ export class WishService {
     //   })
     // );
     
-    return this.http.get('assets/wishes1.json', options).pipe(
+    return this.http.get('assets/wishes.json', options).pipe(
       catchError(this.handleError));
   }
 
