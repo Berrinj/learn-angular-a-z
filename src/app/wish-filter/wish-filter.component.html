@@ -1,0 +1,10 @@
+<p>wish-filter works!</p>
+
+<div class="col-sm-2">
+  <label for="filter p-3 bold" class="form-label">Filter</label>
+  <select class="form-select" id="filter" [(ngModel)]="listFilter" (ngModelChange)="updateFilter($event)">
+    <option value="0">All</option>
+    <option value="1">Unfulfilled</option>
+    <option value="2">Fulfilled</option>
+  </select>
+</div>
