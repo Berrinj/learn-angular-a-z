@@ -1,6 +1,10 @@
+import { Injectable } from "@angular/core";
 import { Observable, Subject } from "rxjs";
 
-class EventService {
+@Injectable({
+  providedIn: 'root'
+})
+export class EventService {
   private subject = new Subject<any>();
 
   emit(eventName: string, payload: any) {
@@ -16,4 +20,3 @@ this.subject.next({ eventName, payload });
   }
 }
 
-export default new EventService();
