@@ -1,0 +1,13 @@
+<p>wish-list works!</p>
+
+<div *ngIf="wishes.length === 0; else showItems" class="mt-3">
+  <h3>Wish List is Empty</h3>
+  <p>Add items to your wish list.</p>
+</div>
+
+<ng-template #showItems>
+  <ul class="wish-list mt-3">
+    <wish-list-item *ngFor="let wish of wishes" [wish]="wish">
+    </wish-list-item>
+  </ul>
+</ng-template>
