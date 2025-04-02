@@ -16,7 +16,7 @@ import { WishService } from './wish.service';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  items! : WishItem[] ;
+  items : WishItem[] = [];
 
   filter: (item: WishItem) => boolean = () => true;
 
@@ -32,7 +32,12 @@ constructor(events: EventService, private wishService: WishService) {
 ngOnInit(): void {
     this.wishService.getWishes().subscribe((data: any) => {
       this.items = data;
-  })
+  },
+  (error: any) => {
+    console.error('Error fetching wishes:', error);
+    alert(error.message);
+  },
+);
 }
 
 }
