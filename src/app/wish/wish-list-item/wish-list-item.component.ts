@@ -17,6 +17,10 @@ export class WishListItemComponent {
 get cssClasses() {
   // return this.fullfilled ? ['strikeout', 'text-muted'] : [''];
   return {"strikeout text-muted": this.wish.isComplete};
+  // return {
+  //   strikeout: this.wish.isComplete,
+  //   'text-muted': this.wish.isComplete,
+  // };
 }
 
 constructor(private events: EventService) { };

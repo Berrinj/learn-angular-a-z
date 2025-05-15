@@ -1,0 +1,22 @@
+<p>contact works!</p>
+<div class="container mt-4">
+  <h2>Contact Us</h2>
+  <form>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" id="name" class="form-control" name="name" [formControl]="name" ngModel required />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" id="email" class="form-control" name="email" [formControl]="email" ngModel required />
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea id="message" class="form-control" name="message" rows="4" [formControl]="message" ngModel
+        required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="$event.preventDefault(); onSubmit()">
+      Submit
+    </button>
+  </form>
+</div>
