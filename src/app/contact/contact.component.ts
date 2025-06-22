@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, ReactiveFormsModule, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -11,17 +11,25 @@ export class ContactComponent {
 
   constructor() { }
 
-  name = new FormControl('');
-  email = new FormControl('');
-  message = new FormControl('');
+  contactForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    message: new FormControl('')
+  });
+
+  // name = new FormControl('');
+  // email = new FormControl('');
+  // message = new FormControl('');
 
   onSubmit() {
-    if (this.name.dirty) {
-      alert('Name is changed!');
-    }
-    console.log('Name:', this.name.value);
-    console.log('Email:', this.email.value);
-    console.log('Message:', this.message.value);
+    // if (this.name.dirty) {
+    //   alert('Name is changed!');
+    // }
+    // console.log('Name:', this.name.value);
+    // console.log('Email:', this.email.value);
+    // console.log('Message:', this.message.value);
+    console.log(this.contactForm.value);
+    console.log(this.contactForm.valid);
   }
   // resetForm() {
   //   this.name.reset();
