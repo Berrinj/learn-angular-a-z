@@ -22,7 +22,9 @@
         <small class="text-danger" *ngIf="contactForm.get('email')?.hasError('required')">This field is required</small>
         <small class="text-danger" *ngIf="contactForm.get('email')?.hasError('email')">Please enter a valid email
           address.</small>
-
+        <small class="text-danger" *ngIf="contactForm.get('email')?.hasError('invalidEmailDomain')">'example.com',
+          'test.com', 'demo.com are not valid
+          email domains.</small>
       </div>
     </div>
     <div class="mb-3">
