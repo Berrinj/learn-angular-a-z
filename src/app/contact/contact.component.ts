@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-
+import { invalidEmailDomain } from './invalidEmailDomain';
 @Component({
   selector: 'app-contact',
   imports: [ReactiveFormsModule, CommonModule],
@@ -14,7 +14,7 @@ export class ContactComponent {
 
   contactForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email, invalidEmailDomain]),
     message: new FormControl('', [Validators.required, Validators.minLength(10)])
   });
 
